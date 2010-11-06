@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/angga/Projects'
+let g:netrw_dirhist_2='/home/angga/Projects/DGAF'
+let g:netrw_dirhist_3='/home/angga/Projects/DGAF/src'
+let g:netrw_dirhist_4='/home/angga/Projects/DGAF/src/java'
+let g:netrw_dirhist_5='/home/angga/Projects/DGAF/src/java/Domain'
