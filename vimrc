@@ -32,6 +32,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
+set fo-=c fo-=o fo-=r
 
 " Just please, don't clutter my filesystem
 set nobackup
