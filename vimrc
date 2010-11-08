@@ -32,7 +32,7 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
-set fo-=c fo-=o fo-=r
+set fo-=c fo-=r fo-=o
 
 " Just please, don't clutter my filesystem
 set nobackup
@@ -108,6 +108,15 @@ vmap < <gv
 if &t_Co > 2 || has("gui_running")
     syntax on
 endif
+
+
+"======
+" Begin plugin-specific setting
+"=====
+
+nnoremap <f2> :NERDTreeToggle<cr>
+vnoremap <f2> :NERDTreeToggle<cr>
+inoremap <f2> <esc>:NERDTreeToggle<cr>
 
 
 "======
