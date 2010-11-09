@@ -53,7 +53,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Make formatting easier
-set listchars=tab:↔\ ,eol:▼,trail:●
+set listchars=tab:↔\ ,eol:▼,trail:▪
 
 " Make long line information clearer
 set wrap
@@ -96,6 +96,12 @@ nnoremap ; :
 " Split window view and then switch to it
 nnoremap <leader>w <c-w>v<c-w>l
 
+" Easy window resizing
+noremap <A-h> <C-w><
+noremap <A-j> <C-W>-
+noremap <A-k> <C-W>+
+noremap <A-l> <C-w>>
+
 " Make formatting paragraph easier
 vmap Q gq
 vmap Q gqap
@@ -107,6 +113,12 @@ vmap < <gv
 " Turn syntax on 
 if &t_Co > 2 || has("gui_running")
     syntax on
+endif
+
+" Disable toolbar and menubar for screen real estate
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=m
 endif
 
 
