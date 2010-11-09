@@ -130,6 +130,8 @@ nnoremap <f2> :NERDTreeToggle<cr>
 vnoremap <f2> :NERDTreeToggle<cr>
 inoremap <f2> <esc>:NERDTreeToggle<cr>
 
+map <F4> :TlistToggle<CR>
+map <F8> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "======
 " Begin OS-specific setting
@@ -162,6 +164,6 @@ endif
 "======
 
 if &t_Co >= 256 || has("gui_running")
-    colorscheme mustang
+    colorscheme molokai
 endif
 
