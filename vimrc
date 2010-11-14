@@ -27,12 +27,10 @@ set hidden
 set wildmenu
 set wildmode=list:longest
 set wildignore=*.swp,*.bak,*.class,*.pyc
-"set cursorline
 set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
-set fo-=c fo-=r fo-=o
 
 " Just please, don't clutter my filesystem
 set nobackup
@@ -55,11 +53,9 @@ vnoremap <tab> %
 " Make formatting easier
 set listchars=tab:↔\ ,eol:▼,trail:▪
 
-" Make long line information clearer
+" Configure long lines behaviour 
 set wrap
-"set textwidth=79
-"set formatoptions=qrn1
-set colorcolumn=85
+set textwidth=79
 
 " Force me to learn to movement the (great) movement key
 nnoremap <up> <nop>
@@ -76,25 +72,25 @@ nnoremap j gj
 nnoremap k gk
 
 " Make inserting lines easier on normal mode
-nnoremap <s-cr> O<esc>
-nnoremap <cr> o<esc>
+nnoremap <S-CR> O<Esc>
+nnoremap <CR> o<Esc>
 
 " Toggle invisible character
 nnoremap <leader>h :set list!<cr>
 
 " Get rid of F1
-nnoremap <f1> <esc>
-inoremap <f1> <esc>
-vnoremap <f1> <esc>
+nnoremap <F1> <Esc>
+inoremap <F1> <Esc>
+vnoremap <F1> <Esc>
 
 " Make change mode easier
-inoremap jj <esc>
+inoremap <Space><Space> <Esc>
 
 " Make it even easier to type command
 nnoremap ; :
 
 " Split window view and then switch to it
-nnoremap <leader>w <c-w>v<c-w>l
+nnoremap <leader>w <C-w>v<C-w>l
 
 " Easy window resizing
 noremap <A-h> <C-w><
@@ -121,17 +117,23 @@ if has("gui_running")
     set guioptions-=m
 endif
 
+" Disable comment auto completion.
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
 "======
 " Begin plugin-specific setting
 "=====
 
-nnoremap <f2> :NERDTreeToggle<cr>
-vnoremap <f2> :NERDTreeToggle<cr>
-inoremap <f2> <esc>:NERDTreeToggle<cr>
+" NERDTree
+map <F2> :NERDTreeToggle<CR>
 
+" Tlist
 map <F4> :TlistToggle<CR>
-map <F8> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" Ctags
+map <F8> :!ctags --recurse --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
 
 "======
 " Begin OS-specific setting
