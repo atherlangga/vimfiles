@@ -10,6 +10,9 @@ filetype plugin indent on
 " Vi-compatibility clearly makes Vim not optimal
 set nocompatible
 
+" Set the Leader key
+let mapleader=","
+
 " Tab setting
 set tabstop=4
 set shiftwidth=4
@@ -36,9 +39,6 @@ set number
 set nobackup
 set noswapfile
 
-" Set the leader key
-let mapleader=","
-
 " Set search setting
 set ignorecase
 set smartcase
@@ -46,26 +46,17 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <Leader><space> :nohlsearch<CR>
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Make formatting easier
+" Invisible character configuration
 set listchars=tab:↔\ ,eol:▼,trail:▪
+nnoremap <Leader>h :set list!<CR>
 
-" Configure long lines behaviour 
+" Make long lines configuration 
 set wrap
 set textwidth=79
-
-" Force me to learn to movement the (great) movement key
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 
 " Make movement more natural
 nnoremap j gj
@@ -76,7 +67,6 @@ nnoremap <S-CR> O<Esc>
 nnoremap <CR> o<Esc>
 
 " Toggle invisible character
-nnoremap <leader>h :set list!<cr>
 
 " Get rid of F1
 nnoremap <F1> <Esc>
@@ -84,25 +74,21 @@ inoremap <F1> <Esc>
 vnoremap <F1> <Esc>
 
 " Make change mode easier
-inoremap <Space><Space> <Esc>
+inoremap '' <Esc>
 
 " Make it even easier to type command
 nnoremap ; :
 
-" Split window view and then switch to it
-nnoremap <leader>w <C-w>v<C-w>l
-
-" Easy window resizing
+" Window management configuration
+nnoremap <Leader>w <C-w>v<C-w>l
 noremap <A-h> <C-w><
 noremap <A-j> <C-W>-
 noremap <A-k> <C-W>+
 noremap <A-l> <C-w>>
 
-" Make formatting paragraph easier
+" Make formatting easier
 vmap Q gq
 vmap Q gqap
-
-" Make indenting repetition easier
 vmap > >gv
 vmap < <gv
 
@@ -134,6 +120,9 @@ map <F4> :TlistToggle<CR>
 " Ctags
 map <F8> :!ctags --recurse --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
+" Minibufexplorer
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
 
 "======
 " Begin OS-specific setting
