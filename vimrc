@@ -1,6 +1,6 @@
-"======
-" Begin common setting
-"======
+"==============================================================================="
+"   Common settings 
+"==============================================================================="
 
 " First of all, configure pathogen
 filetype off
@@ -9,9 +9,6 @@ filetype plugin indent on
 
 " Vi-compatibility clearly makes Vim not optimal
 set nocompatible
-
-" Set the Leader key
-let mapleader=","
 
 " Tab setting
 set tabstop=4
@@ -34,6 +31,9 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
+set listchars=tab:↔\ ,eol:▼,trail:▪
+set wrap
+set textwidth=79
 
 " Just please, don't clutter my filesystem
 set nobackup
@@ -46,51 +46,6 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <Leader><space> :nohlsearch<CR>
-nnoremap <tab> %
-vnoremap <tab> %
-
-" Invisible character configuration
-set listchars=tab:↔\ ,eol:▼,trail:▪
-nnoremap <Leader>h :set list!<CR>
-
-" Make long lines configuration 
-set wrap
-set textwidth=79
-
-" Make movement more natural
-nnoremap j gj
-nnoremap k gk
-
-" Make inserting lines easier on normal mode
-nnoremap <S-CR> O<Esc>
-nnoremap <CR> o<Esc>
-
-" Toggle invisible character
-
-" Get rid of F1
-nnoremap <F1> <Esc>
-inoremap <F1> <Esc>
-vnoremap <F1> <Esc>
-
-" Make change mode easier
-inoremap '' <Esc>
-
-" Make it even easier to type command
-nnoremap ; :
-
-" Window management configuration
-nnoremap <Leader>w <C-w>v<C-w>l
-noremap <A-h> <C-w><
-noremap <A-j> <C-W>-
-noremap <A-k> <C-W>+
-noremap <A-l> <C-w>>
-
-" Make formatting easier
-vmap Q gq
-vmap Q gqap
-vmap > >gv
-vmap < <gv
 
 " Turn syntax on 
 if &t_Co > 2 || has("gui_running")
@@ -107,9 +62,57 @@ endif
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
-"======
-" Begin plugin-specific setting
-"=====
+"==============================================================================="
+"   Various keyboard setting
+"==============================================================================="
+
+" Set the Leader key
+let mapleader=","
+
+" Binding for visualization
+nnoremap <Leader>vh :nohlsearch<CR>
+nnoremap <Leader>vl :set list!<CR>
+
+" Find couple with Tab
+nnoremap <Tab> %
+vnoremap <Tab> %
+
+" Enable more natural movement
+nnoremap j gj
+nnoremap k gk
+nnoremap h <C-h>
+nnoremap l <Space>
+nnoremap <Down> gj
+nnoremap <Up> gk
+nnoremap <Left> <C-h>
+nnoremap <Right> <Space>
+
+" Make inserting lines easier on normal mode
+nnoremap <S-CR> O<Esc>
+nnoremap <CR> o<Esc>
+
+" Make it easy to type command
+nnoremap ; :
+
+" Window management configuration
+noremap <A-h> <C-w><
+noremap <A-j> <C-W>-
+noremap <A-k> <C-W>+
+noremap <A-l> <C-w>>
+
+" Make indenting easier in visual mode
+vnoremap > >gv
+vnoremap < <gv
+
+" Get rid of F1
+nnoremap <F1> <Esc>
+inoremap <F1> <Esc>
+vnoremap <F1> <Esc>
+
+
+"==============================================================================="
+"   Plugin-specific settings
+"==============================================================================="
 
 " NERDTree
 map <F2> :NERDTreeToggle<CR>
@@ -124,9 +127,10 @@ map <F8> :!ctags --recurse --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 
-"======
-" Begin OS-specific setting
-"======
+
+"==============================================================================="
+" OS-specific settings
+"==============================================================================="
 
 if has("unix")
     " Convenient command if I forgot to use sudo
@@ -150,9 +154,9 @@ elseif has("win32")
 endif
 
 
-"======
-" Finally, set the colorscheme
-"======
+"==============================================================================="
+" The holy mighty Colorscheme
+"==============================================================================="
 
 if &t_Co >= 256 || has("gui_running")
     colorscheme molokai
