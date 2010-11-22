@@ -4,6 +4,7 @@
 
 " First of all, configure pathogen
 filetype off
+call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
@@ -93,6 +94,7 @@ nnoremap <CR> o<Esc>
 
 " Make it easy to type command
 nnoremap ; :
+vnoremap ; :
 
 " Window management configuration
 noremap <A-h> <C-w><
@@ -115,15 +117,15 @@ vnoremap <F1> <Esc>
 "==============================================================================="
 
 " NERDTree
-map <F2> :NERDTreeToggle<CR>
+noremap <F2> :NERDTreeToggle<CR>
 
 " Tlist
-map <F4> :TlistToggle<CR>
+noremap <F4> :TlistToggle<CR>
 
 " Ctags
-map <F8> :!ctags --recurse --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+noremap <F8> :!ctags --recurse --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-" Minibufexplorer
+" MiniBufExplorer
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
 
