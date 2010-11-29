@@ -34,7 +34,6 @@ set laststatus=2
 set number
 set listchars=tab:↔\ ,eol:▼,trail:▪
 set wrap
-set textwidth=79
 
 " Just please, don't clutter my filesystem
 set nobackup
