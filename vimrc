@@ -160,6 +160,6 @@ endif
 "==============================================================================="
 
 if &t_Co >= 256 || has("gui_running")
-    colorscheme busybee
+    colorscheme chance-of-storm
 endif
 
