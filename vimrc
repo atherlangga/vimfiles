@@ -101,6 +101,12 @@ noremap <A-j> <C-W>-
 noremap <A-k> <C-W>+
 noremap <A-l> <C-w>>
 
+" Buffer movement configuration
+noremap <C-Left> :bprevious<CR>
+noremap <C-Right> :bnext<CR>
+noremap <C-h> :bprevious<CR>
+noremap <C-l> :bnext<CR>
+
 " Make indenting easier in visual mode
 vnoremap > >gv
 vnoremap < <gv
