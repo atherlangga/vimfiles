@@ -127,6 +127,12 @@ noremap <F2> :NERDTreeToggle<CR>
 " Tlist
 noremap <F4> :TlistToggle<CR>
 
+" Unimpaired
+nnoremap <S-Up> [e
+nnoremap <S-Down> ]e
+vnoremap <S-Up> [egv
+vnoremap <S-Down> ]egv
+
 " Ctags
 noremap <F8> :!ctags --recurse --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
@@ -156,7 +162,7 @@ if has("unix")
 elseif has("win32")
     " My font choice for my workstation
     if has("gui_running")
-        set guifont=Envy_Code_R:h11:cANSI
+        set guifont=Envy_Code_R:h10:cANSI
     endif
 endif
 
@@ -166,6 +172,6 @@ endif
 "==============================================================================="
 
 if &t_Co >= 256 || has("gui_running")
-    colorscheme chance-of-storm
+    colorscheme molokai
 endif
 
