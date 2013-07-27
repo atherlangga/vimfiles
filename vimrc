@@ -134,7 +134,7 @@ vnoremap <S-Up> [egv
 vnoremap <S-Down> ]egv
 
 " Ctags
-noremap <F8> :!ctags --recurse --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+"noremap <F8> :!ctags --recurse --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " MiniBufExplorer
 let g:miniBufExplMapWindowNavArrows = 1
