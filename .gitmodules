@@ -10,3 +10,6 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/lightline"]
+	path = bundle/lightline
+	url = https://github.com/itchyny/lightline.vim.git
