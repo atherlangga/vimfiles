@@ -156,13 +156,13 @@ if has("unix")
 
     " My font choice for my linux laptop
     if has("gui_running")
-       set guifont=Envy\ Code\ R\ 10 
+       set guifont=Fira\ Mono\ OT\ 10
     endif
 
 elseif has("win32")
     " My font choice for my workstation
     if has("gui_running")
-        set guifont=Envy_Code_R:h10:cANSI
+        set guifont=Fira_Mono_OT:h10:cANSI
     endif
 endif
 
